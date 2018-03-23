@@ -1452,6 +1452,7 @@ class Zend_Date extends Zend_Date_DateObject
                 $daylist = Zend_Locale_Data::getList($locale, 'day');
                 $weekday = (int) $this->toString(self::WEEKDAY_DIGIT, 'iso', $locale);
                 $cnt = 0;
+                $found = 0;
 
                 foreach ($daylist as $key => $value) {
                     if (strtoupper(iconv_substr($value, 0, 3, 'UTF-8')) == strtoupper($date)) {
@@ -1484,6 +1485,7 @@ class Zend_Date extends Zend_Date_DateObject
                 $daylist = Zend_Locale_Data::getList($locale, 'day');
                 $weekday = (int) $this->toString(self::WEEKDAY_DIGIT, 'iso', $locale);
                 $cnt = 0;
+                $found = 0;
 
                 foreach ($daylist as $key => $value) {
                     if (strtoupper($value) == strtoupper($date)) {
@@ -1548,6 +1550,8 @@ class Zend_Date extends Zend_Date_DateObject
                 $daylist = Zend_Locale_Data::getList($locale, 'day', array('gregorian', 'format', 'abbreviated'));
                 $weekday = (int) $this->toString(self::WEEKDAY_DIGIT, 'iso', $locale);
                 $cnt = 0;
+                $found = 0;
+
                 foreach ($daylist as $key => $value) {
                     if (strtoupper(iconv_substr($value, 0, 1, 'UTF-8')) == strtoupper($date)) {
                         $found = $cnt;
@@ -1570,6 +1574,7 @@ class Zend_Date extends Zend_Date_DateObject
                 $daylist = Zend_Locale_Data::getList($locale, 'day', array('gregorian', 'format', 'abbreviated'));
                 $weekday = (int) $this->toString(self::WEEKDAY_DIGIT, 'iso', $locale);
                 $cnt = 0;
+                $found = 0;
                 foreach ($daylist as $key => $value) {
                     if (strtoupper($value) == strtoupper($date)) {
                         $found = $cnt;
@@ -1603,6 +1608,7 @@ class Zend_Date extends Zend_Date_DateObject
             case self::MONTH_NAME:
                 $monthlist = Zend_Locale_Data::getList($locale, 'month');
                 $cnt = 0;
+                $found = 0;
                 foreach ($monthlist as $key => $value) {
                     if (strtoupper($value) == strtoupper($date)) {
                         $found = $key;
@@ -1674,6 +1680,7 @@ class Zend_Date extends Zend_Date_DateObject
             case self::MONTH_NAME_SHORT:
                 $monthlist = Zend_Locale_Data::getList($locale, 'month', array('gregorian', 'format', 'abbreviated'));
                 $cnt = 0;
+                $found = 0;
                 foreach ($monthlist as $key => $value) {
                     if (strtoupper($value) == strtoupper($date)) {
                         $found = $key;
@@ -1750,6 +1757,7 @@ class Zend_Date extends Zend_Date_DateObject
             case self::MONTH_NAME_NARROW:
                 $monthlist = Zend_Locale_Data::getList($locale, 'month', array('gregorian', 'stand-alone', 'narrow'));
                 $cnt       = 0;
+                $found     = 0;
                 foreach ($monthlist as $key => $value) {
                     if (strtoupper($value) === strtoupper($date)) {
                         $found = $key;
@@ -3597,6 +3605,8 @@ class Zend_Date extends Zend_Date_DateObject
         if ($locale === null) {
             $locale = $this->getLocale();
         }
+
+        $found = 0;
 
         if ($month instanceof Zend_Date) {
             // extract month from object

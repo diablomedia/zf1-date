@@ -1,2 +1,8 @@
 parameters:
     ignoreErrors:
+        - '#Variable \$id might not be defined\.#'
+        - '#Variable \$idstamp might not be defined\.#'
+        - '#Variable \$day might not be defined\.#'
+        - '#Variable \$leapyear might not be defined\.#'
+        - '#Variable \$year might not be defined\.#'
+        - '#Variable \$offset might not be defined\.#'

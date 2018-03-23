@@ -1000,7 +1000,7 @@ abstract class Zend_Date_DateObject {
 
         return $this->mktime($hour, $min, $sec, $this->date('m', $this->_unixTimestamp),
                              $this->date('j', $this->_unixTimestamp), $this->date('Y', $this->_unixTimestamp),
-                             -1, true);
+                             true);
     }
 
     /**
