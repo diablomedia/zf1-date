@@ -35,16 +35,6 @@ if (!defined('TESTS_ZEND_I18N_EXTENDED_COVERAGE')) {
 }
 
 /**
- * Zend_Date
- */
-require_once 'Zend/Date.php';
-require_once 'Zend/Locale.php';
-require_once 'Zend/Date/Cities.php';
-require_once 'Zend/TimeSync.php';
-
-// echo "BCMATH is ", Zend_Locale_Math::isBcmathDisabled() ? 'disabled':'not disabled', "\n";
-
-/**
  * @category   Zend
  * @package    Zend_Date
  * @subpackage UnitTests
@@ -62,7 +52,6 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
     {
         $this->originalTimezone = date_default_timezone_get();
         date_default_timezone_set('Indian/Maldives');
-        require_once 'Zend/Cache.php';
         $this->_cache = Zend_Cache::factory('Core', 'File',
                  array('lifetime' => 120, 'automatic_serialization' => true),
                  array('cache_dir' => dirname(__FILE__) . '/_files/'));
@@ -283,14 +272,10 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
      */
     public function testSetTimestamp2()
     {
-        try {
-            $locale = new Zend_Locale('de_AT');
-            $date = new Zend_Date(0,null,$locale);
-            $result = $date->setTimestamp('notimestamp');
-            $this->fail("exception expected");
-        } catch (Zend_Date_Exception $e) {
-            // success
-        }
+        $this->expectException(Zend_Date_Exception::class);
+        $locale = new Zend_Locale('de_AT');
+        $date = new Zend_Date(0,null,$locale);
+        $result = $date->setTimestamp('notimestamp');
     }
 
     /**
@@ -319,14 +304,10 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
      */
     public function testAddTimestamp2()
     {
-        try {
-            $locale = new Zend_Locale('de_AT');
-            $date = new Zend_Date(0,null,$locale);
-            $result = $date->addTimestamp('notimestamp');
-            $this->fail("exception expected");
-        } catch (Zend_Date_Exception $e) {
-            // success
-        }
+        $this->expectException(Zend_Date_Exception::class);
+        $locale = new Zend_Locale('de_AT');
+        $date = new Zend_Date(0,null,$locale);
+        $result = $date->addTimestamp('notimestamp');
     }
 
     /**
@@ -345,14 +326,10 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
      */
     public function testSubTimestamp2()
     {
-        try {
-            $locale = new Zend_Locale('de_AT');
-            $date = new Zend_Date(0,null,$locale);
-            $result = $date->subTimestamp('notimestamp');
-            $this->fail("exception expected");
-        } catch (Zend_Date_Exception $e) {
-            // success
-        }
+        $this->expectException(Zend_Date_Exception::class);
+        $locale = new Zend_Locale('de_AT');
+        $date = new Zend_Date(0,null,$locale);
+        $result = $date->subTimestamp('notimestamp');
     }
 
     /**
@@ -5274,7 +5251,6 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
             // success
         }
 
-        require_once 'Zend/Cache.php';
         $cache = Zend_Cache::factory('Core', 'File',
                  array('lifetime' => 120, 'automatic_serialization' => true),
                  array('cache_dir' => dirname(__FILE__) . '/_files/'));
