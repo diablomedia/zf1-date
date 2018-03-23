@@ -38,5 +38,8 @@
         "test": "phpunit ./tests",
         "test-with-coverage": "phpunit --coverage-clover=clover.xml ./tests",
         "phpstan": "phpstan analyze -l2 -c phpstan.neon --no-progress ./src --ansi"
+    },
+    "suggest": {
+        "ext-iconv": "Required for this component"
     }
 }
