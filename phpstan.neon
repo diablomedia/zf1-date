@@ -6,3 +6,4 @@ parameters:
         - '#Variable \$leapyear might not be defined\.#'
         - '#Variable \$year might not be defined\.#'
         - '#Variable \$offset might not be defined\.#'
+        - '#Variable \$masterException might not be defined\.#'
