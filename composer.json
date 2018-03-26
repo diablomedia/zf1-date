@@ -13,9 +13,9 @@
     "require": {
         "php": ">=7.0.0",
         "diablomedia/zendframework1-exception": "^1.0.0",
-        "diablomedia/zendframework1-cache": "dev-master",
-        "diablomedia/zendframework1-locale": "dev-master",
-        "diablomedia/zendframework1-timesync": "dev-master"
+        "diablomedia/zendframework1-cache": "^1.0.0",
+        "diablomedia/zendframework1-locale": "^1.0.0",
+        "diablomedia/zendframework1-timesync": "*"
     },
     "autoload": {
         "psr-0": {
