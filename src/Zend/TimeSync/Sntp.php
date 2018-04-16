@@ -101,8 +101,8 @@ class Zend_TimeSync_Sntp extends Zend_TimeSync_Protocol
      */
     protected function _extract($result)
     {
-        $dec   = hexdec('7fffffff');
-        $time  = abs(($dec - hexdec(bin2hex($result))) - $dec);
+        $dec  = hexdec('7fffffff');
+        $time = abs(($dec - hexdec(bin2hex($result))) - $dec);
         $time -= 2208988800;
         // Socket delay
         $time -= $this->_delay;

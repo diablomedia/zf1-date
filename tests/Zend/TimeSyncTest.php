@@ -33,14 +33,14 @@ class Zend_TimeSyncTest extends PHPUnit\Framework\TestCase
 {
     public $timeservers = array(
         // invalid servers
-        'server_a'  => 'ntp://be.foo.bar.org',
-        'server_b'  => 'sntp://be.foo.bar.org',
-        'server_c'  => 'sntp://foo:bar@be.foo.bar.org:123',
+        'server_a' => 'ntp://be.foo.bar.org',
+        'server_b' => 'sntp://be.foo.bar.org',
+        'server_c' => 'sntp://foo:bar@be.foo.bar.org:123',
 
         // valid servers
-        'server_d'  => 'ntp://be.pool.ntp.org',
-        'server_e'  => 'ntp://time.windows.com',
-        'server_f'  => 'sntp://time-C.timefreq.bldrdoc.gov'
+        'server_d' => 'ntp://be.pool.ntp.org',
+        'server_e' => 'ntp://time.windows.com',
+        'server_f' => 'sntp://time-C.timefreq.bldrdoc.gov'
     );
 
     /**
@@ -280,7 +280,7 @@ class Zend_TimeSyncTest extends PHPUnit\Framework\TestCase
         } catch (Zend_TimeSync_Exception $e) {
             $exceptions = $e->get();
 
-            foreach($exceptions as $key => $exception) {
+            foreach ($exceptions as $key => $exception) {
                 $this->assertTrue($exception instanceof Zend_TimeSync_Exception);
             }
         }

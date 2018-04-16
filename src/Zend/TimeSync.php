@@ -255,19 +255,19 @@ class Zend_TimeSync implements IteratorAggregate
     {
         if ($pos = strpos($target, '://')) {
             $protocol = substr($target, 0, $pos);
-            $adress = substr($target, $pos + 3);
+            $adress   = substr($target, $pos + 3);
         } else {
-            $adress = $target;
+            $adress   = $target;
             $protocol = self::DEFAULT_PROTOCOL;
         }
 
         if ($pos = strrpos($adress, ':')) {
             $posbr = strpos($adress, ']');
             if ($posbr and ($pos > $posbr)) {
-                $port = substr($adress, $pos + 1);
+                $port   = substr($adress, $pos + 1);
                 $adress = substr($adress, 0, $pos);
-            } else if (!$posbr and $pos) {
-                $port = substr($adress, $pos + 1);
+            } elseif (!$posbr and $pos) {
+                $port   = substr($adress, $pos + 1);
                 $adress = substr($adress, 0, $pos);
             } else {
                 $port = null;
