@@ -528,7 +528,7 @@ abstract class Zend_Date_DateObject
                             $date['hours'],
                             $date['minutes'],
                             $date['seconds'],
-                                                      $date['mon'],
+                            $date['mon'],
                             $date['mday'],
                             2000
                         ));
@@ -537,7 +537,7 @@ abstract class Zend_Date_DateObject
                             $date['hours'],
                             $date['minutes'],
                             $date['seconds'],
-                                                      $date['mon'],
+                            $date['mon'],
                             $date['mday'],
                             2000
                         ));
@@ -550,7 +550,7 @@ abstract class Zend_Date_DateObject
                             $date['hours'],
                             $date['minutes'],
                             $date['seconds'],
-                                                      $date['mon'],
+                            $date['mon'],
                             $date['mday'],
                             2000
                         ));
@@ -559,7 +559,7 @@ abstract class Zend_Date_DateObject
                             $date['hours'],
                             $date['minutes'],
                             $date['seconds'],
-                                                      $date['mon'],
+                            $date['mon'],
                             $date['mday'],
                             2000
                         ));
@@ -583,7 +583,7 @@ abstract class Zend_Date_DateObject
                             $date['hours'],
                             $date['minutes'],
                             $date['seconds'],
-                                                      $date['mon'],
+                            $date['mon'],
                             $date['mday'],
                             2000
                         ));
@@ -592,7 +592,7 @@ abstract class Zend_Date_DateObject
                             $date['hours'],
                             $date['minutes'],
                             $date['seconds'],
-                                                      $date['mon'],
+                            $date['mon'],
                             $date['mday'],
                             2000
                         ));
@@ -947,7 +947,7 @@ abstract class Zend_Date_DateObject
                     $this->_unixTimestamp,
                     SUNFUNCS_RET_TIMESTAMP,
                     $location['latitude'],
-                                   $location['longitude'],
+                    $location['longitude'],
                     90 + $horizon,
                     $this->getGmtOffset() / 3600
                 );
@@ -956,7 +956,7 @@ abstract class Zend_Date_DateObject
                 $this->_unixTimestamp,
                 SUNFUNCS_RET_TIMESTAMP,
                 $location['latitude'],
-                                $location['longitude'],
+                $location['longitude'],
                 90 + $horizon,
                 $this->getGmtOffset() / 3600
             );
@@ -1042,9 +1042,9 @@ abstract class Zend_Date_DateObject
             $min,
             $sec,
             $this->date('m', $this->_unixTimestamp),
-                             $this->date('j', $this->_unixTimestamp),
+            $this->date('j', $this->_unixTimestamp),
             $this->date('Y', $this->_unixTimestamp),
-                             true
+            true
         );
     }
 
@@ -1115,7 +1115,7 @@ abstract class Zend_Date_DateObject
                 $date['hours'],
                 $date['minutes'],
                 $date['seconds'],
-                                    $date['mon'],
+                $date['mon'],
                 $date['mday'],
                 $date['year'],
                 false
@@ -1124,7 +1124,7 @@ abstract class Zend_Date_DateObject
                         $date['hours'],
                         $date['minutes'],
                         $date['seconds'],
-                                    $date['mon'],
+                        $date['mon'],
                         $date['mday'],
                         $date['year'],
                         true

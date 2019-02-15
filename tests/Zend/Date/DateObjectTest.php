@@ -38,8 +38,8 @@ class Zend_Date_DateObjectTest extends PHPUnit\Framework\TestCase
         $this->_cache = Zend_Cache::factory(
             'Core',
             'File',
-                 array('lifetime'  => 120, 'automatic_serialization' => true),
-                 array('cache_dir' => dirname(__FILE__) . '/../_files/')
+            array('lifetime'  => 120, 'automatic_serialization' => true),
+            array('cache_dir' => dirname(__FILE__) . '/../_files/')
         );
         Zend_Date_DateObjectTestHelper::setOptions(array('cache' => $this->_cache));
     }

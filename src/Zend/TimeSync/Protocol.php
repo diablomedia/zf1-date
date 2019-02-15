@@ -105,7 +105,7 @@ abstract class Zend_TimeSync_Protocol
             $this->_port,
             $errno,
             $errstr,
-                             Zend_TimeSync::$options['timeout']
+            Zend_TimeSync::$options['timeout']
         );
         if ($socket === false) {
             throw new Zend_TimeSync_Exception('could not connect to ' .
