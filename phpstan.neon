@@ -60,5 +60,5 @@ parameters:
             message: '#Comparison operation ">" between int\|string\|Zend_Date and 0 results in an error\.#'
             path: %currentWorkingDirectory%/src/Zend/Date.php
         -
-            message: '#Comparison operation "<" between int\|string\|Zend_Date and 0 results in an error\.#'
+            message: '#Comparison operation "<" between int\<min, 0>|string\|Zend_Date and 0 results in an error\.#'
             path: %currentWorkingDirectory%/src/Zend/Date.php

@@ -235,7 +235,7 @@ class Zend_Date extends Zend_Date_DateObject
      *
      * @param  array  $options  Options to set
      * @throws Zend_Date_Exception
-     * @return array Options array if no option was given
+     * @return array|void Options array if no option was given
      */
     public static function setOptions(array $options = array())
     {
@@ -294,6 +294,8 @@ class Zend_Date extends Zend_Date_DateObject
                 throw new Zend_Date_Exception("Unknown option: $name = $value");
             }
         }
+
+        return;
     }
 
     /**
