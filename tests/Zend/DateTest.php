@@ -47,7 +47,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
     private $_cache = null;
     private $_orig  = array();
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->originalTimezone = date_default_timezone_get();
         date_default_timezone_set('Indian/Maldives');
@@ -65,7 +65,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         Zend_Date::setOptions(array('format_type' => 'iso'));
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Zend_Date::setOptions($this->_orig);
         $this->_cache->clean(Zend_Cache::CLEANING_MODE_ALL);
@@ -3540,7 +3540,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         $d2     = new Zend_Date(1010101010, null, $locale);
 
         $result = $date->getIso();
-        $this->assertInternalType('string', $result);
+        $this->assertIsString($result);
         $this->assertSame('2002-01-04T04:36:50+05:00', $result);
     }
 
@@ -3670,7 +3670,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         $date   = new Zend_Date(1010101010, null, $locale);
 
         $result = $date->getArpa();
-        $this->assertInternalType('string', $result);
+        $this->assertIsString($result);
         $this->assertSame('Fri, 04 Jan 02 04:36:50 +0500', $result);
     }
 
@@ -3794,7 +3794,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         $date->setTimezone(date_default_timezone_get());
 
         $result = Zend_Date_Cities::City('vienna');
-        $this->assertInternalType('array', $result);
+        $this->assertIsArray($result);
         $result = $date->getSunset($result);
         // PHP's internal sunrise/sunset calculation changed in 7.2.0
         // See comment in Zend/Date/DateObjectTest.php::testCalcSunInternal
@@ -3807,7 +3807,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
 
         unset($result);
         $result = Zend_Date_Cities::City('vienna', 'civil');
-        $this->assertInternalType('array', $result);
+        $this->assertIsArray($result);
         $result = $date->getSunset($result);
         if (version_compare(PHP_VERSION, '7.2.0', '>=')) {
             $this->assertSame('2002-01-04T20:09:01+05:00', $result->get(Zend_Date::W3C));
@@ -3817,7 +3817,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
 
         unset($result);
         $result = Zend_Date_Cities::City('vienna', 'nautic');
-        $this->assertInternalType('array', $result);
+        $this->assertIsArray($result);
         $result = $date->getSunset($result);
         if (version_compare(PHP_VERSION, '7.2.0', '>=')) {
             $this->assertSame('2002-01-04T20:08:15+05:00', $result->get(Zend_Date::W3C));
@@ -3827,7 +3827,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
 
         unset($result);
         $result = Zend_Date_Cities::City('vienna', 'astronomic');
-        $this->assertInternalType('array', $result);
+        $this->assertIsArray($result);
         $result = $date->getSunset($result);
         if (version_compare(PHP_VERSION, '7.2.0', '>=')) {
             $this->assertSame('2002-01-04T20:07:30+05:00', $result->get(Zend_Date::W3C));
@@ -3837,7 +3837,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
 
         unset($result);
         $result = Zend_Date_Cities::City('BERLIN');
-        $this->assertInternalType('array', $result);
+        $this->assertIsArray($result);
         $result = $date->getSunrise($result);
         if (version_compare(PHP_VERSION, '7.2.0', '>=')) {
             $this->assertSame('2002-01-04T12:21:26+05:00', $result->get(Zend_Date::W3C));
@@ -3847,7 +3847,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
 
         unset($result);
         $result = Zend_Date_Cities::City('London');
-        $this->assertInternalType('array', $result);
+        $this->assertIsArray($result);
         $result = $date->getSunInfo($result);
         if (version_compare(PHP_VERSION, '7.2.0', '>=')) {
             $this->assertSame('2002-01-04T13:10:15+05:00', $result['sunrise']['effective']->get(Zend_Date::W3C));
@@ -3926,7 +3926,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         unset($result);
         $result = array('latitude' => 0, 'longitude' => 0);
         $result = $date->getSunInfo($result);
-        $this->assertInternalType('array', $result);
+        $this->assertIsArray($result);
 
         unset($result);
         $result = array('latitude' => 0, 'longitude' => 0);
@@ -5219,7 +5219,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
     public function testSetOptions()
     {
         $options = Zend_Date::setOptions();
-        $this->assertInternalType('array', $options);
+        $this->assertIsArray($options);
         $this->assertEquals('iso', $options['format_type']);
 
         Zend_Date::setOptions(array('format_type' => 'php'));

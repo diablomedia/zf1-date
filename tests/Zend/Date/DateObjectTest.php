@@ -31,7 +31,7 @@
  */
 class Zend_Date_DateObjectTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->originalTimezone = date_default_timezone_get();
         date_default_timezone_set('Europe/Paris');
@@ -44,7 +44,7 @@ class Zend_Date_DateObjectTest extends PHPUnit\Framework\TestCase
         Zend_Date_DateObjectTestHelper::setOptions(array('cache' => $this->_cache));
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         date_default_timezone_set($this->originalTimezone);
         $this->_cache->clean(Zend_Cache::CLEANING_MODE_ALL);
@@ -350,8 +350,8 @@ class Zend_Date_DateObjectTest extends PHPUnit\Framework\TestCase
     public function testGetDate()
     {
         $date = new Zend_Date_DateObjectTestHelper(0);
-        $this->assertInternalType('array', $date->getDateParts());
-        $this->assertInternalType('array', $date->getDateParts(1000000));
+        $this->assertIsArray($date->getDateParts());
+        $this->assertIsArray($date->getDateParts(1000000));
 
         $test = array(             'seconds' => 40,      'minutes' => 46,
             'hours'                          => 14,       'mday' => 12,      'wday' => 1,

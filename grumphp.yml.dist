@@ -1,5 +1,5 @@
 # grumphp.yml
-parameters:
+grumphp:
     process_timeout: 300
     tasks:
         composer:
