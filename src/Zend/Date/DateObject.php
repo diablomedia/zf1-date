@@ -440,7 +440,7 @@ abstract class Zend_Date_DateObject
 
                 // year formats
                 case 'L':  // is leap year ?
-                    $output .= (self::isYearLeapYear($date['year'])) ? '1' : '0';
+                    $output .= (self::isYearLeapYear((int) $date['year'])) ? '1' : '0';
                     break;
 
                 case 'o':  // ISO 8601 year number
