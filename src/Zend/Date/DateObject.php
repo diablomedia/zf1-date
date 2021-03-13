@@ -155,8 +155,8 @@ abstract class Zend_Date_DateObject
             if (($this->_timezone != $oldzone) and ($gmt === false)) {
                 date_default_timezone_set($this->_timezone);
             }
-            $result = ($gmt) ? @gmmktime($hour, $minute, $second, $month, $day, $year)
-                             :   @mktime($hour, $minute, $second, $month, $day, $year);
+            $result = ($gmt) ? @gmmktime((int) $hour, (int) $minute, (int) $second, (int) $month, (int) $day, (int) $year)
+                             :   @mktime((int) $hour, (int) $minute, (int) $second, (int) $month, (int) $day, (int)  $year);
             date_default_timezone_set($oldzone);
 
             return $result;
