@@ -48,10 +48,10 @@ parameters:
             message: '#Binary operation "\+=" between int and string results in an error\.#'
             path: %currentWorkingDirectory%/src/Zend/Date.php
         -
-            message: '#Binary operation "-" between string and float\|int\|string results in an error\.#'
+            message: '#Binary operation "-" between string and float\|int\|\(string&numeric\) results in an error\.#'
             path: %currentWorkingDirectory%/src/Zend/Date.php
         -
-            message: '#Binary operation "\+=" between float\|int\|string and string results in an error\.#'
+            message: '#Binary operation "\+=" between float\|int\|\(string&numeric\) and string results in an error\.#'
             path: %currentWorkingDirectory%/src/Zend/Date.php
         -
             message: '#Binary operation "-" between string and \(int\|string\) results in an error\.#'
