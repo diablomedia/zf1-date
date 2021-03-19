@@ -3549,7 +3549,7 @@ class Zend_Date extends Zend_Date_DateObject
             throw new Zend_Date_Exception("year ($year) has to be integer for checkLeapYear()", 0, null, $year);
         }
 
-        return (bool) parent::isYearLeapYear($year);
+        return (bool) parent::isYearLeapYear((int) $year);
     }
 
 
@@ -4999,7 +4999,7 @@ class Zend_Date extends Zend_Date_DateObject
             $parsed['year'] = 1970;
         }
 
-        if (self::isYearLeapYear($parsed['year'])) {
+        if (self::isYearLeapYear((int) $parsed['year'])) {
             $parsed['year'] = 1972;
         } else {
             $parsed['year'] = 1971;
