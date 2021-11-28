@@ -13,15 +13,8 @@ jobs:
             fail-fast: false
             matrix:
                 operating-system: [ubuntu-latest]
-                php-versions: ['7.2', '7.3', '7.4']
+                php-versions: ['7.4', '8.0, '8.1']
                 composer-args: ['', '--prefer-lowest']
-                include:
-                    - operating-system: ubuntu-latest
-                      php-versions: '8.0'
-                      composer-args: '--ignore-platform-reqs --no-scripts'
-                    - operating-system: ubuntu-latest
-                      php-versions: '8.0'
-                      composer-args: '--prefer-lowest --ignore-platform-reqs --no-scripts'
         runs-on: ${{ matrix.operating-system }}
         steps:
             - name: Checkout
@@ -50,6 +43,8 @@ jobs:
             - name: PHPStan
               run: composer phpstan
             - name: Code Style Check
+              env:
+                  PHP_CS_FIXER_IGNORE_ENV: true
               run: composer style-check -- --format=checkstyle | cs2pr
             - name: Test
               run: composer test-with-coverage

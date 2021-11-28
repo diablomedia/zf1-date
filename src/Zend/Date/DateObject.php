@@ -934,8 +934,9 @@ abstract class Zend_Date_DateObject
     /**
      * Calculates the sunrise or sunset based on a location
      *
-     * @param  array  $location  Location for calculation MUST include 'latitude', 'longitude', 'horizon'
-     * @param  bool   $horizon   true: sunrise; false: sunset
+     * @param  array  $location  Location for calculation MUST include 'latitude', 'longitude'
+     * @param  float $horizon   Horizon angle
+     * @param  bool   $rise   true: sunrise; false: sunset
      * @return mixed  - false: midnight sun, integer:
      */
     protected function calcSun($location, $horizon, $rise = false)
