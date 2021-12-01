@@ -15,9 +15,6 @@ parameters:
         - '#Variable \$offset might not be defined\.#'
         - '#Variable \$masterException might not be defined\.#'
         -
-            message: '#Binary operation "&" between string and [\d]+ results in an error\.#'
-            path: %currentWorkingDirectory%/src/Zend/TimeSync/Ntp.php
-        -
             message: '#Binary operation "\+" between string and 2208988800 results in an error\.#'
             path: %currentWorkingDirectory%/src/Zend/TimeSync/Ntp.php
         -
