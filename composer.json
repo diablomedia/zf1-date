@@ -10,7 +10,7 @@
     "license": "BSD-3-Clause",
     "require": {
         "ext-iconv": "*",
-        "php": "^7.4 || ~8.0 || ~8.1",
+        "php": "^7.4 || ~8.0.0 || ~8.1.0",
         "diablomedia/zendframework1-exception": "^1.0.0",
         "diablomedia/zendframework1-cache": "^1.0.0",
         "diablomedia/zendframework1-loader": "^1.0.0",
