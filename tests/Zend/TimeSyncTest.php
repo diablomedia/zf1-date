@@ -52,7 +52,7 @@ class Zend_TimeSyncTest extends PHPUnit\Framework\TestCase
     {
         $server = new Zend_TimeSync();
 
-        $this->assertTrue($server instanceof Zend_TimeSync);
+        $this->assertInstanceOf(Zend_TimeSync::class, $server);
     }
 
     /**
@@ -65,7 +65,7 @@ class Zend_TimeSyncTest extends PHPUnit\Framework\TestCase
         $server = new Zend_TimeSync($this->timeservers);
         $result = $server->getServer('server_f');
 
-        $this->assertTrue($result instanceof Zend_TimeSync_Protocol);
+        $this->assertInstanceOf(Zend_TimeSync_Protocol::class, $result);
     }
 
     /**
@@ -80,7 +80,7 @@ class Zend_TimeSyncTest extends PHPUnit\Framework\TestCase
         $server->setServer('windows_time');
         $result = $server->getServer();
 
-        $this->assertTrue($result instanceof Zend_TimeSync_Ntp);
+        $this->assertInstanceOf(Zend_TimeSync_Ntp::class, $result);
     }
 
     /**
@@ -94,7 +94,7 @@ class Zend_TimeSyncTest extends PHPUnit\Framework\TestCase
         $server->setServer('windows_time');
         $result = $server->getServer();
 
-        $this->assertTrue($result instanceof Zend_TimeSync_Ntp);
+        $this->assertInstanceOf(Zend_TimeSync_Ntp::class, $result);
     }
 
     /**
@@ -108,7 +108,7 @@ class Zend_TimeSyncTest extends PHPUnit\Framework\TestCase
         $server->setServer('windows_time');
         $result = $server->getServer();
 
-        $this->assertTrue($result instanceof Zend_TimeSync_Sntp);
+        $this->assertInstanceOf(Zend_TimeSync_Sntp::class, $result);
     }
 
     /**
@@ -221,7 +221,7 @@ class Zend_TimeSyncTest extends PHPUnit\Framework\TestCase
 
         try {
             $result = $server->getDate();
-            $this->assertTrue($result instanceof Zend_Date);
+            $this->assertInstanceOf(Zend_Date::class, $result);
         } catch (Zend_TimeSync_Exception $e) {
             $this->assertContains('all timeservers are bogus', $e->getMessage());
         }
@@ -238,7 +238,7 @@ class Zend_TimeSyncTest extends PHPUnit\Framework\TestCase
 
         try {
             $result = $server->getDate();
-            $this->assertTrue($result instanceof Zend_Date);
+            $this->assertInstanceOf(Zend_Date::class, $result);
         } catch (Zend_TimeSync_Exception $e) {
             $this->assertContains('all timeservers are bogus', $e->getMessage());
         }
@@ -255,7 +255,7 @@ class Zend_TimeSyncTest extends PHPUnit\Framework\TestCase
 
         try {
             $result = $server->getDate();
-            $this->assertTrue($result instanceof Zend_Date);
+            $this->assertInstanceOf(Zend_Date::class, $result);
         } catch (Zend_TimeSync_Exception $e) {
             $this->assertContains('all timeservers are bogus', $e->getMessage());
         }
@@ -281,7 +281,7 @@ class Zend_TimeSyncTest extends PHPUnit\Framework\TestCase
             $exceptions = $e->get();
 
             foreach ($exceptions as $key => $exception) {
-                $this->assertTrue($exception instanceof Zend_TimeSync_Exception);
+                $this->assertInstanceOf(Zend_TimeSync_Exception::class, $exception);
             }
         }
     }
@@ -296,7 +296,7 @@ class Zend_TimeSyncTest extends PHPUnit\Framework\TestCase
         $servers = new Zend_TimeSync($this->timeservers);
 
         foreach ($servers as $key => $server) {
-            $this->assertTrue($server instanceof Zend_TimeSync_Protocol);
+            $this->assertInstanceOf(Zend_TimeSync_Protocol::class, $server);
         }
     }
 

@@ -64,7 +64,7 @@ class Zend_Date_DateObjectTest extends PHPUnit\Framework\TestCase
         }
 
         $date = new Zend_Date(0);
-        $this->assertTrue($date instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $date);
     }
 
     /**
@@ -81,7 +81,7 @@ class Zend_Date_DateObjectTest extends PHPUnit\Framework\TestCase
         }
 
         $date = new Zend_Date(1000);
-        $this->assertTrue($date instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $date);
     }
 
     /**

@@ -86,7 +86,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         }
 
         $date = new Zend_Date(0);
-        $this->assertTrue($date instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $date);
     }
 
     /**
@@ -103,11 +103,11 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         }
 
         $date = new Zend_Date('2006-01-01');
-        $this->assertTrue($date instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $date);
         $this->assertSame('2006-01-01T00:00:00+05:00', $date->get(Zend_Date::ISO_8601));
 
         $date = new Zend_Date('2006-01-01', 'en_US');
-        $this->assertTrue($date instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $date);
         $this->assertSame('2006-01-01T00:00:00+05:00', $date->get(Zend_Date::ISO_8601));
     }
 
@@ -163,7 +163,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         }
 
         $date = new Zend_Date('12345678');
-        $this->assertTrue($date instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $date);
     }
 
     /**
@@ -180,7 +180,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         }
 
         $date = new Zend_Date('13', Zend_Date::HOUR);
-        $this->assertTrue($date instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $date);
 
         $date = new Zend_Date('20070802', 'YYYYMMdd');
         $this->assertSame('2007-08-02T00:00:00+05:00', $date->getIso());
@@ -193,7 +193,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
     {
         $locale = new Zend_Locale('de_AT');
         $date   = new Zend_Date('13', null, $locale);
-        $this->assertTrue($date instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $date);
     }
 
     /**
@@ -203,7 +203,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
     {
         $locale = new Zend_Locale('de_AT');
         $date   = new Zend_Date('13', Zend_Date::HOUR, $locale);
-        $this->assertTrue($date instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $date);
     }
 
     /**
@@ -3308,7 +3308,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         $d2   = new Zend_Date(1234567899, null, $locale);
 
         $result = $date->setTime(Zend_Date::now());
-        $this->assertTrue($result instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $result);
         $result = $date->setTime('10:20:30');
         $this->assertSame('2009-02-14T10:20:30+05:00', $result->get(Zend_Date::W3C));
         $this->assertSame('2009-02-14T10:20:30+05:00', $date->get(Zend_Date::W3C));
@@ -3335,7 +3335,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         $d2     = new Zend_Date(1234567899, null, $locale);
 
         $result = $date->addTime(Zend_Date::now());
-        $this->assertTrue($result instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $result);
 
         $date   = new Zend_Date(1234567890, null, $locale);
         $result = $date->addTime('10:20:30');
@@ -3361,7 +3361,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         $d2     = new Zend_Date(1234567899, null, $locale);
 
         $result = $date->subTime(Zend_Date::now());
-        $this->assertTrue($result instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $result);
 
         $date   = new Zend_Date(1234567890, null, $locale);
         $result = $date->subTime('10:20:30');
@@ -3435,7 +3435,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         $d2     = new Zend_Date(1234567899, null, $locale);
 
         $result = $date->setDate(Zend_Date::now());
-        $this->assertTrue($result instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $result);
         $result = $date->setDate('11.05.2008');
         // Hint: the hour changes from 0 to 1 because of DST...
         // An hour is added by winter->summertime change
@@ -3462,7 +3462,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         $d2     = new Zend_Date(1234567899, null, $locale);
 
         $result = $date->addDate(Zend_Date::now());
-        $this->assertTrue($result instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $result);
 
         $date   = new Zend_Date(1234567890, null, $locale);
         $result = $date->addDate('02-03-05');
@@ -3493,7 +3493,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         $d2     = new Zend_Date(1234567899, null, $locale);
 
         $result = $date->subDate(Zend_Date::now());
-        $this->assertTrue($result instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $result);
 
         $date   = new Zend_Date(1234567890, null, $locale);
         $result = $date->subDate('03-05-1001');
@@ -3554,7 +3554,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         $d2     = new Zend_Date(1234567899, null, $locale);
 
         $result = $date->setIso(Zend_Date::now());
-        $this->assertTrue($result instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $result);
         $result = $date->setIso('2002-01-04T00:00:00+0000');
         $this->assertSame('2002-01-04T00:00:00+00:00', $result->get(Zend_Date::W3C));
         $this->assertSame('2002-01-04T00:00:00+00:00', $date->get(Zend_Date::W3C));
@@ -3572,7 +3572,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         $d2     = new Zend_Date(1234567899, $locale);
 
         $result = $date->addIso(Zend_Date::now());
-        $this->assertTrue($result instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $result);
     }
 
     /**
@@ -3612,7 +3612,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         $d2     = new Zend_Date(1234567899, null, $locale);
 
         $result = $date->subIso(Zend_Date::now());
-        $this->assertTrue($result instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $result);
     }
 
     /**
@@ -3685,7 +3685,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         $date->setTimezone('Indian/Maldives');
 
         $result = $date->setArpa(Zend_Date::now());
-        $this->assertTrue($result instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $result);
         $result = $date->setArpa('Sat, 03 May 01 00:00:00 +0500');
         $this->assertSame('Thu, 03 May 01 00:00:00 +0500', $result->get(Zend_Date::RFC_822));
         $this->assertSame('2001-05-03T00:00:00+05:00', $date->get(Zend_Date::W3C));
@@ -3708,7 +3708,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         $d2     = new Zend_Date(1234567899, $locale);
 
         $result = $date->addArpa(Zend_Date::now());
-        $this->assertTrue($result instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $result);
 
         $date   = new Zend_Date(1234567890, $locale);
         $result = $date->addArpa('Sat, 03 May 01 00:00:00 +0500');
@@ -3739,7 +3739,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         $d2     = new Zend_Date(1234567899, $locale);
 
         $result = $date->subArpa(Zend_Date::now());
-        $this->assertTrue($result instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $result);
 
         $date   = new Zend_Date(1234567890, null, $locale);
         $result = $date->subArpa('Sat, 03 May 01 00:00:00 +0500');
@@ -3899,7 +3899,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         unset($result);
         $result = array('latitude' => 0, 'longitude' => 0);
         $result = $date->getSunrise($result);
-        $this->assertTrue($result instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $result);
     }
 
     /**
@@ -3925,7 +3925,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         $this->assertSame('Indian/Maldives', $result);
 
         $result = $date->setTimezone('America/Chicago');
-        $this->assertTrue($result instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $result);
         $result = $date->getTimezone();
         $this->assertSame('America/Chicago', $result);
 
@@ -4061,7 +4061,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         $d2->setTimeZone(date_default_timezone_get());
 
         $result = $date->getYear();
-        $this->assertTrue($result instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $result);
         $this->assertSame('01.01.2009 05:00:00', $result->toString());
         $this->assertSame('01.01.2021 05:00:00', $d2->getYear()->toString());
     }
@@ -4225,7 +4225,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
         $d2->setTimeZone(date_default_timezone_get());
 
         $result = $date->getMonth();
-        $this->assertTrue($result instanceof Zend_Date);
+        $this->assertInstanceOf(Zend_Date::class, $result);
         $this->assertSame('01.02.1970 05:00:00', $result->toString());
         $this->assertSame('01.02.1970 05:00:00', $date->getMonth()->toString());
     }
