@@ -31,6 +31,9 @@
  */
 class Zend_Date_DateObjectTest extends PHPUnit\Framework\TestCase
 {
+    protected $originalTimezone;
+    protected $_cache;
+
     public function setUp(): void
     {
         $this->originalTimezone = date_default_timezone_get();

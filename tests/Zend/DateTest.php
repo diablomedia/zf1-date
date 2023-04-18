@@ -46,6 +46,7 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
 {
     private $_cache = null;
     private $_orig  = array();
+    protected $originalTimezone;
 
     public function setUp(): void
     {

@@ -1323,7 +1323,7 @@ class Zend_Date extends Zend_Date_DateObject
                             $date = $date['day'];
                         }
                         break;
-                    // Fall through
+                        // Fall through
                     case self::WEEKDAY_SHORT:
                     case self::WEEKDAY:
                     case self::WEEKDAY_8601:
@@ -1340,7 +1340,7 @@ class Zend_Date extends Zend_Date_DateObject
                             $date = $date['day_of_year'];
                         }
                         break;
-                    // Fall through
+                        // Fall through
                     case self::MONTH:
                     case self::MONTH_SHORT:
                     case self::MONTH_NAME:
@@ -1350,7 +1350,7 @@ class Zend_Date extends Zend_Date_DateObject
                             $date = $date['month'];
                         }
                         break;
-                    // Fall through
+                        // Fall through
                     case self::YEAR:
                     case self::YEAR_SHORT:
                     case self::YEAR_8601:
@@ -1359,7 +1359,7 @@ class Zend_Date extends Zend_Date_DateObject
                             $date = $date['year'];
                         }
                         break;
-                    // Fall through
+                        // Fall through
                     case self::HOUR:
                     case self::HOUR_AM:
                     case self::HOUR_SHORT:
@@ -1368,21 +1368,21 @@ class Zend_Date extends Zend_Date_DateObject
                             $date = $date['hour'];
                         }
                         break;
-                    // Fall through
+                        // Fall through
                     case self::MINUTE:
                     case self::MINUTE_SHORT:
                         if (isset($date['minute']) === true) {
                             $date = $date['minute'];
                         }
                         break;
-                    // Fall through
+                        // Fall through
                     case self::SECOND:
                     case self::SECOND_SHORT:
                         if (isset($date['second']) === true) {
                             $date = $date['second'];
                         }
                         break;
-                    // Fall through
+                        // Fall through
                     case self::TIMEZONE:
                     case self::TIMEZONE_NAME:
                         if (isset($date['timezone']) === true) {
@@ -1636,7 +1636,7 @@ class Zend_Date extends Zend_Date_DateObject
                 throw new Zend_Date_Exception("invalid date ($date) operand, weekday expected", 0, null, $date);
                 break;
 
-            // week formats
+                // week formats
             case self::WEEK:
                 if (is_numeric($date)) {
                     $week = (int) $this->toString(self::WEEK, 'iso', $locale);
@@ -1651,7 +1651,7 @@ class Zend_Date extends Zend_Date_DateObject
                 throw new Zend_Date_Exception("invalid date ($date) operand, week expected", 0, null, $date);
                 break;
 
-            // month formats
+                // month formats
             case self::MONTH_NAME:
                 $monthlist = Zend_Locale_Data::getList($locale, 'month');
                 $cnt       = 0;
@@ -1864,7 +1864,7 @@ class Zend_Date extends Zend_Date_DateObject
                 throw new Zend_Date_Exception("invalid date ($date) operand, month expected", 0, null, $date);
                 break;
 
-            // year formats
+                // year formats
             case self::LEAPYEAR:
                 throw new Zend_Date_Exception('leap year not supported', 0, null, $date);
                 break;
@@ -1961,7 +1961,7 @@ class Zend_Date extends Zend_Date_DateObject
                 throw new Zend_Date_Exception("invalid date ($date) operand, year expected", 0, null, $date);
                 break;
 
-            // time formats
+                // time formats
             case self::MERIDIEM:
                 throw new Zend_Date_Exception('meridiem not supported', 0, null, $date);
                 break;
@@ -2109,8 +2109,8 @@ class Zend_Date extends Zend_Date_DateObject
                 throw new Zend_Date_Exception("invalid date ($date) operand, second expected", 0, null, $date);
                 break;
 
-            // timezone formats
-            // break intentionally omitted
+                // timezone formats
+                // break intentionally omitted
             case self::TIMEZONE_NAME:
             case self::TIMEZONE:
             case self::TIMEZONE_SECS:
@@ -2126,7 +2126,7 @@ class Zend_Date extends Zend_Date_DateObject
                 throw new Zend_Date_Exception('gmtdiff not supported', 0, null, $date);
                 break;
 
-            // date strings
+                // date strings
             case self::ISO_8601:
                 // (-)YYYY-MM-dd
                 preg_match('/^(-{0,1}\d{4})-(\d{2})-(\d{2})/', $date, $datematch);
@@ -2211,9 +2211,9 @@ class Zend_Date extends Zend_Date_DateObject
                 break;
 
             case self::RFC_2822:
-                 $result = preg_match('/^\w{3},\s(\d{1,2})\s(\w{3})\s(\d{4})\s'
-                                    . '(\d{2}):(\d{2}):{0,1}(\d{0,2})\s([+-]'
-                                    . '{1}\d{4}|\w{1,20})$/', $date, $match);
+                $result = preg_match('/^\w{3},\s(\d{1,2})\s(\w{3})\s(\d{4})\s'
+                                   . '(\d{2}):(\d{2}):{0,1}(\d{0,2})\s([+-]'
+                                   . '{1}\d{4}|\w{1,20})$/', $date, $match);
 
                 if (!$result) {
                     throw new Zend_Date_Exception("no RFC 2822 format ($date)", 0, null, $date);
@@ -2245,8 +2245,8 @@ class Zend_Date extends Zend_Date_DateObject
                 throw new Zend_Date_Exception("invalid date ($date) operand, timestamp expected", 0, null, $date);
                 break;
 
-            // additional formats
-            // break intentionally omitted
+                // additional formats
+                // break intentionally omitted
             case self::ERA:
             case self::ERA_NAME:
                 throw new Zend_Date_Exception('era not supported', 0, null, $date);
@@ -2612,7 +2612,7 @@ class Zend_Date extends Zend_Date_DateObject
                 }
                 break;
 
-            // ATOM and RFC_3339 are identical
+                // ATOM and RFC_3339 are identical
             case self::ATOM:
             case self::RFC_3339:
                 $result = preg_match('/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})\d{0,4}([+-]{1}\d{2}:\d{2}|Z)$/', $date, $match);
@@ -3999,7 +3999,7 @@ class Zend_Date extends Zend_Date_DateObject
         } else {
             switch (iconv_strlen($day, 'UTF-8')) {
                 case 1:
-                   $type = self::WEEKDAY_NARROW;
+                    $type = self::WEEKDAY_NARROW;
                     break;
                 case 2:
                     $type = self::WEEKDAY_NAME;
@@ -4148,7 +4148,7 @@ class Zend_Date extends Zend_Date_DateObject
         } else {
             switch (iconv_strlen($weekday, 'UTF-8')) {
                 case 1:
-                   $type = self::WEEKDAY_NARROW;
+                    $type = self::WEEKDAY_NARROW;
                     break;
                 case 2:
                     $type = self::WEEKDAY_NAME;

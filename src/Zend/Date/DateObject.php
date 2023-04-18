@@ -410,13 +410,13 @@ abstract class Zend_Date_DateObject
                     break;
 
 
-                // week formats
+                    // week formats
                 case 'W':  // ISO 8601, week number of year
                     $output .= $this->weekNumber($date['year'], $date['mon'], $date['mday']);
                     break;
 
 
-                // month formats
+                    // month formats
                 case 'F':  // string month name, january - december
                     $output .= date('F', mktime(0, 0, 0, $date['mon'], 2, 1971));
                     break;
@@ -438,7 +438,7 @@ abstract class Zend_Date_DateObject
                     break;
 
 
-                // year formats
+                    // year formats
                 case 'L':  // is leap year ?
                     $output .= (self::isYearLeapYear((int) $date['year'])) ? '1' : '0';
                     break;
@@ -461,7 +461,7 @@ abstract class Zend_Date_DateObject
                     break;
 
 
-                // time formats
+                    // time formats
                 case 'a':  // lower case am/pm
                     $output .= (($date['hours'] >= 12) ? 'pm' : 'am');
                     break;
@@ -521,7 +521,7 @@ abstract class Zend_Date_DateObject
                     break;
 
 
-                // timezone formats
+                    // timezone formats
                 case 'e':  // timezone identifier
                     if ($gmt === true) {
                         $output .= gmdate('e', mktime(
@@ -604,7 +604,7 @@ abstract class Zend_Date_DateObject
                     break;
 
 
-                // complete time formats
+                    // complete time formats
                 case 'c':  // ISO 8601 date format
                     $difference = $this->getGmtOffset();
                     $difference = sprintf('%s%04d', ($difference <= 0) ? '+' : '-', abs($difference) / 36);
@@ -636,7 +636,7 @@ abstract class Zend_Date_DateObject
                     break;
 
 
-                // special formats
+                    // special formats
                 case '\\':  // next letter to print with no format
                     $i++;
                     if ($i < $length) {
@@ -976,7 +976,7 @@ abstract class Zend_Date_DateObject
 
         // get solar coordinates
         $tmpRise = $rise ? $quarterCircle : $threeQuarterCircle;
-        $radDay  = $this->date('z', $this->_unixTimestamp) + ($tmpRise - $radLongitude) / $fullCircle;
+        $radDay  = (int) $this->date('z', $this->_unixTimestamp) + ($tmpRise - $radLongitude) / $fullCircle;
 
         // solar anomoly and longitude
         $solAnomoly   = $radDay * 0.017202 - 0.0574039;
