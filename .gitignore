@@ -5,3 +5,4 @@
 .phpunit.result.cache
 .php-cs-fixer.cache
 /tests/Zend/_files
+.phpunit.cache

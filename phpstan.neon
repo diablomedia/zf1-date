@@ -20,9 +20,6 @@ parameters:
             message: '#Binary operation "-" between string and [\d] results in an error\.#'
             path: %currentWorkingDirectory%/src/Zend/Date.php
         -
-            message: '#Binary operation "\+" between [\d]+ and string results in an error\.#'
-            path: %currentWorkingDirectory%/src/Zend/Date.php
-        -
             message: '#Binary operation "-=" between string and [\d]+ results in an error\.#'
             path: %currentWorkingDirectory%/src/Zend/Date.php
         -
