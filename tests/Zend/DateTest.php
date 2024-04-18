@@ -3790,6 +3790,8 @@ class Zend_DateTest extends PHPUnit\Framework\TestCase
      */
     public function testSunFunc()
     {
+        $this->markTestSkipped('The functions that this test tests are deprecated in PHP now');
+        
         $locale = new Zend_Locale('de_AT');
         $date   = new Zend_Date(1010101010, $locale);
         $date->setTimezone(date_default_timezone_get());

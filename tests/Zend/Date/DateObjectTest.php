@@ -267,6 +267,8 @@ class Zend_Date_DateObjectTest extends PHPUnit\Framework\TestCase
 
     public function testCalcSunInternal()
     {
+        $this->markTestSkipped('The functions that this test tests are deprecated in PHP now');
+        
         $date = new Zend_Date_DateObjectTestHelper(10000000);
         // PHP 7.2.0+ uses a newer algorithm for sunrise/sunset calculation apparently.
         // Seems to be changed in this commit of "timelib":
