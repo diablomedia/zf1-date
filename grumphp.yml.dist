@@ -1,6 +1,9 @@
 # grumphp.yml
 grumphp:
     process_timeout: 300
+    environment:
+        variables:
+            PHP_CS_FIXER_IGNORE_ENV: "true"
     tasks:
         composer:
             strict: true
