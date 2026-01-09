@@ -11,11 +11,11 @@
     "prefer-stable": true,
     "require": {
         "ext-iconv": "*",
-        "php": "~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
-        "diablomedia/zendframework1-exception": "^1.1.1",
-        "diablomedia/zendframework1-cache": "^1.0.6",
-        "diablomedia/zendframework1-loader": "^1.0.5",
-        "diablomedia/zendframework1-locale": "^1.0.6"
+        "php": "~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
+        "diablomedia/zendframework1-exception": "dev-php-85 as 1.1.1",
+        "diablomedia/zendframework1-cache": "dev-php-85 as 1.0.6",
+        "diablomedia/zendframework1-loader": "dev-php-85 as 1.0.5",
+        "diablomedia/zendframework1-locale": "dev-php-85 as 1.0.6"
     },
     "autoload": {
         "psr-0": {
@@ -57,5 +57,6 @@
         "allow-plugins": {
             "phpro/grumphp-shim": true
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
