@@ -20,31 +20,7 @@ parameters:
             message: '#Binary operation "-" between string and [\d] results in an error\.#'
             path: %currentWorkingDirectory%/src/Zend/Date.php
         -
-            message: '#Binary operation "-=" between string and [\d]+ results in an error\.#'
-            path: %currentWorkingDirectory%/src/Zend/Date.php
-        -
             message: '#Binary operation "-" between string and [\d]+ results in an error\.#'
-            path: %currentWorkingDirectory%/src/Zend/Date.php
-        -
-            message: '#Binary operation "-" between string and int results in an error\.#'
-            path: %currentWorkingDirectory%/src/Zend/Date.php
-        -
-            message: '#Binary operation "\+=" between int and string results in an error\.#'
-            path: %currentWorkingDirectory%/src/Zend/Date.php
-        -
-            message: '#Binary operation "-" between string and float\|int\|numeric-string results in an error\.#'
-            path: %currentWorkingDirectory%/src/Zend/Date.php
-        -
-            message: '#Binary operation "\+=" between float\|int\|numeric-string and string results in an error\.#'
-            path: %currentWorkingDirectory%/src/Zend/Date.php
-        -
-            message: '#Binary operation "-" between string and \(int\|string\) results in an error\.#'
-            path: %currentWorkingDirectory%/src/Zend/Date.php
-        -
-            message: '#Comparison operation ">" between int\|string\|Zend_Date and 0 results in an error\.#'
-            path: %currentWorkingDirectory%/src/Zend/Date.php
-        -
-            message: '#Comparison operation "<" between int\<min, 0>\|string\|Zend_Date and 0 results in an error\.#'
             path: %currentWorkingDirectory%/src/Zend/Date.php
         -
             message: '#Binary operation ">>" between non-falsy-string and 17 results in an error\.#'
