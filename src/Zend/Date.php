@@ -1302,11 +1302,17 @@ class Zend_Date extends Zend_Date_DateObject
         $locale = (string) $locale;
 
         // Create date parts
+        /** @var numeric-string $year */
         $year   = $this->toString(self::YEAR, 'iso');
+        /** @var numeric-string $month */
         $month  = $this->toString(self::MONTH_SHORT, 'iso');
+        /** @var numeric-string $day */
         $day    = $this->toString(self::DAY_SHORT, 'iso');
+        /** @var numeric-string $hour */
         $hour   = $this->toString(self::HOUR_SHORT, 'iso');
+        /** @var numeric-string $minute */
         $minute = $this->toString(self::MINUTE_SHORT, 'iso');
+        /** @var numeric-string $second */
         $second = $this->toString(self::SECOND_SHORT, 'iso');
         // If object extract value
         if ($date instanceof Zend_Date) {
@@ -1566,6 +1572,7 @@ class Zend_Date extends Zend_Date_DateObject
                 if (is_numeric($date)) {
                     if (($calc == 'add') || ($calc == 'sub')) {
                         $year = 1970;
+                        /** @var numeric-string $date */
                         ++$date;
                         ++$day;
                     }
