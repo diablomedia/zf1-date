@@ -200,7 +200,17 @@ class Zend_TimeSync_Ntp extends Zend_TimeSync_Protocol
      */
     protected function _read()
     {
-        $flags = ord(fread($this->_socket, 1));
+        // This is to deal with PHP 8.5 deprecating an empty string (or false)
+        // passed to ord(). The previous behavior is to return 0,
+        // so just replicating that to avoid introducing unexpected behavior.
+        // https://3v4l.org/sRa5n#vnull
+        $socketRead = fread($this->_socket, 1);
+        if ($socketRead === '' || $socketRead === false) {
+            $flags = 0;
+        } else {
+            $flags = ord($socketRead);
+        }
+
         $info  = stream_get_meta_data($this->_socket);
 
         if ($info['timed_out'] === true) {
