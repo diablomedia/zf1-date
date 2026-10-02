@@ -6,4 +6,7 @@
 [![Total Downloads](https://poser.pugx.org/diablomedia/zendframework1-date/downloads)](https://packagist.org/packages/diablomedia/zendframework1-date)
 [![License](https://poser.pugx.org/diablomedia/zendframework1-date/license)](https://packagist.org/packages/diablomedia/zendframework1-date)
 
+> [!WARNING]  
+> We've archived this repo as we're no longer using or maintaining Zend Framework 1
+
 This is just the Zend_Date & Zend_TimeSync components extracted from our fork of the Zend Framework 1 repo (https://github.com/diablomedia/zf1).
